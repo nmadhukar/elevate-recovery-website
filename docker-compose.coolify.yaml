@@ -18,36 +18,26 @@ services:
         # domain (e.g. https://www.elevaterecoveryoh.com). Falls back to the
         # production domain if unset.
         NEXT_PUBLIC_SITE_URL: ${NEXT_PUBLIC_SITE_URL:-https://www.elevaterecoveryoh.com}
+    # Map-style environment (Coolify rewrites the compose to inject build ARGs;
+    # the list/bare-key form trips its parser with "non-string key ... 0").
+    # Routing is handled by the panel Traefik dynamic YAML, so we do NOT use the
+    # SERVICE_FQDN magic variable here. Values are injected by Coolify env vars.
     environment:
-      # Coolify magic variable: generates a public domain + TLS certificate and
-      # configures the proxy to route it to this service on port 3000.
-      # To use your own domain instead, set it in the Coolify "Domains" field.
-      - SERVICE_FQDN_WEB_3000
-      - NODE_ENV=production
-      - NEXT_TELEMETRY_DISABLED=1
-      - NEXT_PUBLIC_SITE_URL=${NEXT_PUBLIC_SITE_URL:-https://www.elevaterecoveryoh.com}
-      #
-      # === Set these as Environment Variables in the Coolify UI (secrets!) ===
-      #   SMTP_HOST=smtp.ionos.com
-      #   SMTP_PORT=465
-      #   SMTP_SECURE=true
-      #   SMTP_USER=coolify@dsiginc.com
-      #   SMTP_PASS=********              (mark as secret/locked in Coolify)
-      #   CONTACT_TO_EMAIL=coolify@dsiginc.com
-      #   CONTACT_FROM_EMAIL=coolify@dsiginc.com
-      # Coolify injects UI env vars into the container automatically; the app
-      # reads them via process.env. Referenced here so they pass through:
-      - SMTP_HOST
-      - SMTP_PORT
-      - SMTP_SECURE
-      - SMTP_USER
-      - SMTP_PASS
-      - CONTACT_TO_EMAIL
-      - CONTACT_FROM_EMAIL
-      # Anti-abuse + geo gate (non-secret; safe defaults baked in).
-      - CONTACT_MAX_PER_DAY=${CONTACT_MAX_PER_DAY:-2}
-      - GEO_RESTRICT_ENABLED=${GEO_RESTRICT_ENABLED:-true}
-      - GEO_ALLOWED_COUNTRIES=${GEO_ALLOWED_COUNTRIES:-US}
+      NODE_ENV: production
+      NEXT_TELEMETRY_DISABLED: "1"
+      NEXT_PUBLIC_SITE_URL: ${NEXT_PUBLIC_SITE_URL:-https://www.elevaterecoveryoh.com}
+      # SMTP (set as secrets in the Coolify UI).
+      SMTP_HOST: ${SMTP_HOST:-smtp.ionos.com}
+      SMTP_PORT: ${SMTP_PORT:-465}
+      SMTP_SECURE: ${SMTP_SECURE:-true}
+      SMTP_USER: ${SMTP_USER:-}
+      SMTP_PASS: ${SMTP_PASS:-}
+      CONTACT_TO_EMAIL: ${CONTACT_TO_EMAIL:-}
+      CONTACT_FROM_EMAIL: ${CONTACT_FROM_EMAIL:-}
+      # Anti-abuse + geo gate.
+      CONTACT_MAX_PER_DAY: ${CONTACT_MAX_PER_DAY:-2}
+      GEO_RESTRICT_ENABLED: ${GEO_RESTRICT_ENABLED:-true}
+      GEO_ALLOWED_COUNTRIES: ${GEO_ALLOWED_COUNTRIES:-US}
     # The container listens on 3000 (HOSTNAME=0.0.0.0 set in the Dockerfile).
     # In this multi-host Coolify setup the public-facing (panel) Traefik on
     # 10.3.104.2 routes to the worker by host IP:port via a dynamic YAML file,
