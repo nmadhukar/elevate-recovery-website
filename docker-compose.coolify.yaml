@@ -49,8 +49,12 @@ services:
       - GEO_RESTRICT_ENABLED=${GEO_RESTRICT_ENABLED:-true}
       - GEO_ALLOWED_COUNTRIES=${GEO_ALLOWED_COUNTRIES:-US}
     # The container listens on 3000 (HOSTNAME=0.0.0.0 set in the Dockerfile).
-    # `expose` publishes it to the Coolify proxy network without binding a host
-    # port (avoids port collisions across apps on the same worker).
+    # In this multi-host Coolify setup the public-facing (panel) Traefik on
+    # 10.3.104.2 routes to the worker by host IP:port via a dynamic YAML file,
+    # so we MUST publish a stable host port — `expose` alone leaves the port
+    # unbound on the worker and the panel proxy 502s. Pin it via HOST_PORT.
+    ports:
+      - "${HOST_PORT:-4196}:3000"
     expose:
       - "3000"
     restart: unless-stopped
