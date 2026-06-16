@@ -1,0 +1,63 @@
+# Coolify deployment compose file for the Elevate Recovery website.
+#
+# In Coolify: create a new Resource → "Docker Compose" (or an Application with
+# Build Pack = Docker Compose), connect this repo, and set the
+# "Docker Compose Location" to:  /docker-compose.coolify.yaml
+#
+# Coolify builds the image from ./Dockerfile (Next.js standalone output) and
+# routes traffic to the container via its built-in proxy (Traefik/Caddy) using
+# the SERVICE_FQDN magic variable below — no host port binding required.
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        # Baked into the build for canonical URLs, sitemap, and JSON-LD.
+        # Set NEXT_PUBLIC_SITE_URL as a *Build Variable* in Coolify to your real
+        # domain (e.g. https://www.elevaterecoveryoh.com). Falls back to the
+        # production domain if unset.
+        NEXT_PUBLIC_SITE_URL: ${NEXT_PUBLIC_SITE_URL:-https://www.elevaterecoveryoh.com}
+    environment:
+      # Coolify magic variable: generates a public domain + TLS certificate and
+      # configures the proxy to route it to this service on port 3000.
+      # To use your own domain instead, set it in the Coolify "Domains" field.
+      - SERVICE_FQDN_WEB_3000
+      - NODE_ENV=production
+      - NEXT_TELEMETRY_DISABLED=1
+      - NEXT_PUBLIC_SITE_URL=${NEXT_PUBLIC_SITE_URL:-https://www.elevaterecoveryoh.com}
+      #
+      # === Set these as Environment Variables in the Coolify UI (secrets!) ===
+      #   SMTP_HOST=smtp.ionos.com
+      #   SMTP_PORT=465
+      #   SMTP_SECURE=true
+      #   SMTP_USER=coolify@dsiginc.com
+      #   SMTP_PASS=********              (mark as secret/locked in Coolify)
+      #   CONTACT_TO_EMAIL=coolify@dsiginc.com
+      #   CONTACT_FROM_EMAIL=coolify@dsiginc.com
+      # Coolify injects UI env vars into the container automatically; the app
+      # reads them via process.env. Referenced here so they pass through:
+      - SMTP_HOST
+      - SMTP_PORT
+      - SMTP_SECURE
+      - SMTP_USER
+      - SMTP_PASS
+      - CONTACT_TO_EMAIL
+      - CONTACT_FROM_EMAIL
+      # Anti-abuse + geo gate (non-secret; safe defaults baked in).
+      - CONTACT_MAX_PER_DAY=${CONTACT_MAX_PER_DAY:-2}
+      - GEO_RESTRICT_ENABLED=${GEO_RESTRICT_ENABLED:-true}
+      - GEO_ALLOWED_COUNTRIES=${GEO_ALLOWED_COUNTRIES:-US}
+    # The container listens on 3000 (HOSTNAME=0.0.0.0 set in the Dockerfile).
+    # `expose` publishes it to the Coolify proxy network without binding a host
+    # port (avoids port collisions across apps on the same worker).
+    expose:
+      - "3000"
+    restart: unless-stopped
+    healthcheck:
+      test:
+        ['CMD', 'wget', '--no-verbose', '--tries=1', '--spider', 'http://127.0.0.1:3000/']
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 25s

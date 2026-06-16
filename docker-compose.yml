@@ -1,0 +1,21 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        # Canonical production URL baked into SEO tags, sitemap, and JSON-LD.
+        # NEXT_PUBLIC_* is inlined at build time, so it must be a build arg.
+        NEXT_PUBLIC_SITE_URL: https://www.elevaterecoveryoh.com
+    image: elevate-recovery-website
+    container_name: elevate-recovery-website
+    ports:
+      - "3000:3000"
+    # Loads SMTP creds + geo settings for local testing (gitignored, optional).
+    env_file:
+      - path: .env.local
+        required: false
+    environment:
+      - NODE_ENV=production
+      - NEXT_TELEMETRY_DISABLED=1
+    restart: unless-stopped
