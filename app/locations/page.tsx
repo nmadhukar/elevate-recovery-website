@@ -10,7 +10,7 @@ import { locations, serviceAreas } from '@/lib/site-data'
 export const metadata: Metadata = {
   title: 'Our Locations',
   description:
-    'Elevate Recovery treatment centers in Lima and Toledo, Ohio. Find addresses, phone numbers, and directions to begin compassionate addiction treatment near you.',
+    'Elevate Recovery treatment centers in Toledo and Northwood, Ohio. Find addresses, phone numbers, and directions to begin compassionate addiction treatment near you.',
   alternates: { canonical: '/locations' },
 }
 
@@ -29,7 +29,7 @@ export default function LocationsPage() {
       <PageHero
         eyebrow="Our Locations"
         title="Two Ohio centers, one commitment to your recovery"
-        description="Whether you’re in Lima, Toledo, or the surrounding communities, expert addiction care is close by. Each location offers a welcoming, judgment-free environment."
+        description="Whether you’re in Toledo, Northwood, or the surrounding communities, expert addiction care is close by. Each location offers a welcoming, judgment-free environment."
         crumbs={[{ label: 'Home', href: '/' }, { label: 'Locations' }]}
       />
 
@@ -140,8 +140,8 @@ export default function LocationsPage() {
             Serving communities across Ohio
           </h2>
           <p className="mt-4 leading-relaxed text-muted-foreground">
-            In addition to Lima and Toledo, we proudly welcome clients from
-            across Northwest and West Central Ohio. Not sure if we can help? Call
+            In addition to Toledo and Northwood, we proudly welcome clients from
+            across Northwest Ohio. Not sure if we can help? Call
             our team — we&apos;ll point you in the right direction, even if that
             means another resource.
           </p>

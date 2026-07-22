@@ -15,8 +15,8 @@ export function LocationsPreview() {
             Compassionate care, close to home
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-muted-foreground text-pretty">
-            With centers in Lima and Toledo, quality addiction treatment is
-            accessible across Northwest and West Central Ohio.
+            With centers in Toledo and Northwood, quality addiction treatment is
+            accessible across Northwest Ohio.
           </p>
         </div>
 

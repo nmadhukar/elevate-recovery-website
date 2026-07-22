@@ -10,7 +10,7 @@ export function Hero() {
         <div className="max-w-xl">
           <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/60 px-3.5 py-1.5 text-xs font-medium text-primary">
             <ShieldCheck className="size-4" />
-            Joint Commission Certified · Lima &amp; Toledo, Ohio
+            Joint Commission Certified · Toledo &amp; Northwood, Ohio
           </div>
           <h1 className="mt-6 font-heading text-4xl font-semibold leading-[1.08] tracking-tight text-balance text-foreground md:text-6xl">
             Rise above addiction. Reclaim your life.

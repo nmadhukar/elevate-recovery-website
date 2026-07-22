@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/hipaa' },
 }
 
-const lima = locations[0]
+const primaryLocation = locations[0]
 
 export default function HipaaPage() {
   return (
@@ -161,7 +161,7 @@ export default function HipaaPage() {
       <p>
         Elevate Recovery — Privacy Officer
         <br />
-        {lima.address}, {lima.cityStateZip}
+        {primaryLocation.address}, {primaryLocation.cityStateZip}
         <br />
         Phone: <a href={PHONE_HREF}>{PHONE_DISPLAY}</a>
         <br />
