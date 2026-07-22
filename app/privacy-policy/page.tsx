@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/privacy-policy' },
 }
 
-const lima = locations[0]
+const primaryLocation = locations[0]
 
 export default function PrivacyPolicyPage() {
   return (
@@ -197,7 +197,7 @@ export default function PrivacyPolicyPage() {
       <p>
         Elevate Recovery
         <br />
-        {lima.address}, {lima.cityStateZip}
+        {primaryLocation.address}, {primaryLocation.cityStateZip}
         <br />
         Phone: <a href={PHONE_HREF}>{PHONE_DISPLAY}</a>
         <br />

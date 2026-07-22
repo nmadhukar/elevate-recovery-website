@@ -20,7 +20,7 @@ import { programs, conditions } from '@/lib/site-data'
 export const metadata: Metadata = {
   title: 'Programs & Levels of Care',
   description:
-    'Explore Elevate Recovery’s full continuum of addiction treatment: medical detox, residential, PHP, IOP, outpatient, aftercare, and medication-assisted treatment in Lima and Toledo, Ohio.',
+    'Explore Elevate Recovery’s full continuum of addiction treatment: medical detox, residential, PHP, IOP, outpatient, aftercare, and medication-assisted treatment in Toledo and Northwood, Ohio.',
   alternates: { canonical: '/programs' },
 }
 

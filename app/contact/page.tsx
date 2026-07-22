@@ -11,7 +11,7 @@ import { siteConfig, locations } from "@/lib/site-data"
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Reach Elevate Recovery in Lima and Toledo, Ohio. Call our 24/7 confidential helpline or send a message and our admissions team will respond promptly.",
+    "Reach Elevate Recovery in Toledo and Northwood, Ohio. Call our 24/7 confidential helpline or send a message and our admissions team will respond promptly.",
   alternates: { canonical: "/contact" },
 }
 
@@ -127,7 +127,7 @@ export default function ContactPage() {
           <div className="overflow-hidden rounded-2xl border border-border">
             <iframe
               title="Map of Elevate Recovery service area in Ohio"
-              src="https://www.google.com/maps?q=Lima,Ohio&output=embed"
+              src="https://www.google.com/maps?q=3900+Sunforest+Ct,+Toledo,+OH+43623&output=embed"
               className="h-80 w-full border-0"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

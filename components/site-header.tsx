@@ -37,7 +37,7 @@ export function SiteHeader() {
       <div className="hidden bg-primary text-primary-foreground md:block">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-1.5 text-xs">
           <p className="text-primary-foreground/90">
-            Joint Commission Certified · Confidential, compassionate care in Lima &amp; Toledo, Ohio
+            Joint Commission Certified · Confidential, compassionate care in Toledo &amp; Northwood, Ohio
           </p>
           <a
             href={PHONE_HREF}

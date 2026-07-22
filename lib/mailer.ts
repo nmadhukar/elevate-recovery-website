@@ -13,6 +13,13 @@ import nodemailer, { type Transporter } from 'nodemailer'
  *   CONTACT_FROM_EMAIL=...  # optional; defaults to SMTP_USER
  */
 
+/**
+ * Where contact + insurance form submissions are delivered. Every submission
+ * goes to BOTH addresses. `CONTACT_TO_EMAIL` (comma-separated) can override
+ * this in an environment, but these are the guaranteed default recipients.
+ */
+const DEFAULT_CONTACT_RECIPIENTS = 'mattoakes@healtoledo.com, mikeo@healtoledo.com'
+
 let cached: Transporter | null = null
 
 function getTransport(): Transporter {
@@ -47,7 +54,7 @@ export type ContactSubmission = {
 /** Sends a form submission to the configured destination mailbox. */
 export async function sendContactEmail(submission: ContactSubmission): Promise<void> {
   const from = process.env.CONTACT_FROM_EMAIL || process.env.SMTP_USER!
-  const to = process.env.CONTACT_TO_EMAIL || process.env.SMTP_USER!
+  const to = process.env.CONTACT_TO_EMAIL || DEFAULT_CONTACT_RECIPIENTS
 
   const rows = submission.fields
     .filter((f) => f.value)
