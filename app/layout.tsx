@@ -25,15 +25,14 @@ const fraunces = Fraunces({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Elevate Recovery | Addiction Treatment in Toledo & Northwood, Ohio',
+    default: 'Elevate Recovery | Addiction Treatment in Toledo, Ohio',
     template: '%s | Elevate Recovery',
   },
   description:
-    'Elevate Recovery is a Joint Commission Certified addiction treatment organization in Toledo and Northwood, Ohio. Compassionate, evidence-based care including medical detox, residential, PHP, IOP, outpatient, and medication-assisted treatment.',
+    'Elevate Recovery is a Joint Commission Certified addiction treatment organization in Toledo, Ohio. Compassionate, evidence-based care including medical detox, residential, PHP, IOP, outpatient, and medication-assisted treatment.',
   keywords: [
     'addiction treatment Ohio',
     'rehab Toledo Ohio',
-    'rehab Northwood Ohio',
     'drug and alcohol treatment',
     'medication-assisted treatment',
     'detox Ohio',
@@ -49,9 +48,9 @@ export const metadata: Metadata = {
   },
   category: 'health',
   openGraph: {
-    title: 'Elevate Recovery | Addiction Treatment in Toledo & Northwood, Ohio',
+    title: 'Elevate Recovery | Addiction Treatment in Toledo, Ohio',
     description:
-      'Joint Commission Certified addiction treatment in Toledo and Northwood, Ohio. A full continuum of compassionate, evidence-based care.',
+      'Joint Commission Certified addiction treatment in Toledo, Ohio. A full continuum of compassionate, evidence-based care.',
     type: 'website',
     locale: 'en_US',
     url: siteConfig.url,
@@ -59,9 +58,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Elevate Recovery | Addiction Treatment in Toledo & Northwood, Ohio',
+    title: 'Elevate Recovery | Addiction Treatment in Toledo, Ohio',
     description:
-      'Joint Commission Certified addiction treatment in Toledo and Northwood, Ohio. Compassionate, evidence-based care.',
+      'Joint Commission Certified addiction treatment in Toledo, Ohio. Compassionate, evidence-based care.',
   },
   robots: {
     index: true,

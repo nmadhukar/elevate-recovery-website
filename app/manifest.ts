@@ -2,10 +2,10 @@ import type { MetadataRoute } from 'next'
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Elevate Recovery — Addiction Treatment in Toledo & Northwood, Ohio',
+    name: 'Elevate Recovery — Addiction Treatment in Toledo, Ohio',
     short_name: 'Elevate Recovery',
     description:
-      'Joint Commission Certified addiction treatment in Toledo and Northwood, Ohio. Compassionate, evidence-based care.',
+      'Joint Commission Certified addiction treatment in Toledo, Ohio. Compassionate, evidence-based care.',
     start_url: '/',
     display: 'standalone',
     background_color: '#faf8fd',

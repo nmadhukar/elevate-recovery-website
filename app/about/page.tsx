@@ -16,7 +16,7 @@ import { breadcrumbSchema } from '@/lib/structured-data'
 export const metadata: Metadata = {
   title: 'About Us',
   description:
-    'Learn about Elevate Recovery — a Joint Commission Certified addiction treatment organization in Toledo and Northwood, Ohio, built on compassion, clinical excellence, and dignity.',
+    'Learn about Elevate Recovery — a Joint Commission Certified addiction treatment organization in Toledo, Ohio, built on compassion, clinical excellence, and dignity.',
   alternates: { canonical: '/about' },
 }
 
@@ -89,7 +89,7 @@ export default function AboutPage() {
             </h2>
             <div className="mt-5 space-y-4 leading-relaxed text-muted-foreground">
               <p>
-                Across our communities in Toledo and Northwood, families have watched
+                Across the Toledo community, families have watched
                 addiction take far too much. Elevate Recovery was created to
                 change that story — to bring world-class, compassionate
                 treatment closer to the people who need it most.

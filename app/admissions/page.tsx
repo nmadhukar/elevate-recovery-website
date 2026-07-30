@@ -38,7 +38,7 @@ const steps = [
   {
     icon: Car,
     title: 'Begin treatment',
-    text: 'We coordinate your start date and, when needed, help arrange transportation to our Toledo or Northwood center.',
+    text: 'We coordinate your start date and, when needed, help arrange transportation to our Toledo center.',
   },
 ]
 

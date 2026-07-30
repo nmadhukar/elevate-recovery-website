@@ -12,7 +12,7 @@ export const siteConfig = {
   // Public production URL. Override at build time with NEXT_PUBLIC_SITE_URL.
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.elevaterecoveryoh.com',
   description:
-    'Joint Commission Certified addiction treatment in Toledo and Northwood, Ohio. A full continuum of compassionate, evidence-based care — medical detox, residential, PHP, IOP, outpatient, and medication-assisted treatment.',
+    'Joint Commission Certified addiction treatment in Toledo, Ohio. A full continuum of compassionate, evidence-based care — medical detox, residential, PHP, IOP, outpatient, and medication-assisted treatment.',
   tagline: 'Rise above addiction. Reclaim your life.',
   phone: PHONE_DISPLAY,
   // Bare tel: target without scheme — pages prefix `tel:` themselves.
@@ -173,24 +173,6 @@ export const locations: Location[] = [
     image: '/location-toledo.png',
     blurb:
       'Our Toledo center provides accessible outpatient, IOP, PHP, and medication-assisted treatment for the greater Toledo and Lucas County community.',
-  },
-  {
-    slug: 'northwood',
-    city: 'Northwood, Ohio',
-    name: 'Elevate Recovery — Northwood',
-    addressLines: ['3055 E Plaza Blvd', 'Northwood, OH 43619'],
-    address: '3055 E Plaza Blvd',
-    cityStateZip: 'Northwood, OH 43619',
-    locality: 'Northwood',
-    region: 'OH',
-    postalCode: '43619',
-    // Approximate coordinates for Northwood 43619 (east of Toledo). Fine-tune if needed.
-    geo: { lat: 41.616, lng: -83.487 },
-    phoneDisplay: '(419) 770-3487',
-    phoneHref: 'tel:+14197703487',
-    image: '/location-northwood.jpg',
-    blurb:
-      'Our Northwood center serves East Toledo, Wood County, and the surrounding communities with outpatient, IOP, PHP, and medication-assisted treatment.',
   },
 ]
 

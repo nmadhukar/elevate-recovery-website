@@ -9,13 +9,13 @@ export function LocationsPreview() {
       <div className="mx-auto max-w-7xl px-6 py-20 md:py-24">
         <div className="max-w-2xl">
           <p className="text-sm font-semibold uppercase tracking-wider text-primary">
-            Our Locations
+            Our Location
           </p>
           <h2 className="mt-3 font-heading text-3xl font-semibold tracking-tight text-balance text-foreground md:text-4xl">
             Compassionate care, close to home
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-muted-foreground text-pretty">
-            With centers in Toledo and Northwood, quality addiction treatment is
+            From our Toledo center, quality addiction treatment is
             accessible across Northwest Ohio.
           </p>
         </div>

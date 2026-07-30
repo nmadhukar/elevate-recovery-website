@@ -11,7 +11,7 @@ import { siteConfig, locations } from "@/lib/site-data"
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Reach Elevate Recovery in Toledo and Northwood, Ohio. Call our 24/7 confidential helpline or send a message and our admissions team will respond promptly.",
+    "Reach Elevate Recovery in Toledo, Ohio. Call our 24/7 confidential helpline or send a message and our admissions team will respond promptly.",
   alternates: { canonical: "/contact" },
 }
 

@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og'
 
 export const alt =
-  'Elevate Recovery — Joint Commission Certified addiction treatment in Toledo & Northwood, Ohio'
+  'Elevate Recovery — Joint Commission Certified addiction treatment in Toledo, Ohio'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
@@ -70,7 +70,7 @@ export default function OpengraphImage() {
               fontFamily: 'Helvetica, Arial, sans-serif',
             }}
           >
-            Compassionate, evidence-based treatment in Toledo &amp; Northwood, Ohio
+            Compassionate, evidence-based treatment in Toledo, Ohio
           </div>
         </div>
 
