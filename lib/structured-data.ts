@@ -36,7 +36,7 @@ export function organizationSchema() {
     image: absolute('/hero.png'),
     description: siteConfig.description,
     foundingDate: siteConfig.founded,
-    telephone: `+1-419-770-3487`,
+    telephone: `+1-419-464-7484`,
     email: siteConfig.email,
     medicalSpecialty: 'Addiction',
     priceRange: '$$',
@@ -55,7 +55,7 @@ export function organizationSchema() {
     })),
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+1-419-770-3487',
+      telephone: '+1-419-464-7484',
       contactType: 'admissions',
       areaServed: 'US',
       availableLanguage: ['English'],

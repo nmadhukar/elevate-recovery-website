@@ -95,7 +95,7 @@ export default function OpengraphImage() {
           >
             Joint Commission Certified
           </div>
-          <div>24/7 Confidential Helpline · (419) 770-3487</div>
+          <div>24/7 Confidential Helpline · (419) 464-7484</div>
         </div>
       </div>
     ),

@@ -1,5 +1,5 @@
-export const PHONE_DISPLAY = '(419) 770-3487'
-export const PHONE_HREF = 'tel:+14197703487'
+export const PHONE_DISPLAY = '(419) 464-7484'
+export const PHONE_HREF = 'tel:+14194647484'
 export const EMAIL = 'admissions@elevaterecoveryoh.com'
 
 /**
@@ -16,7 +16,7 @@ export const siteConfig = {
   tagline: 'Rise above addiction. Reclaim your life.',
   phone: PHONE_DISPLAY,
   // Bare tel: target without scheme — pages prefix `tel:` themselves.
-  phoneHref: '+14197703487',
+  phoneHref: '+14194647484',
   email: EMAIL,
   founded: '2016',
   social: {
@@ -168,8 +168,8 @@ export const locations: Location[] = [
     postalCode: '43623',
     // Approximate coordinates for 43623 (west Toledo). Fine-tune if needed.
     geo: { lat: 41.6875, lng: -83.637 },
-    phoneDisplay: '(419) 770-3487',
-    phoneHref: 'tel:+14197703487',
+    phoneDisplay: '(419) 464-7484',
+    phoneHref: 'tel:+14194647484',
     image: '/location-toledo.png',
     blurb:
       'Our Toledo center provides accessible outpatient, IOP, PHP, and medication-assisted treatment for the greater Toledo and Lucas County community.',
