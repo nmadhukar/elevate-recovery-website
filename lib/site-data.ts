@@ -79,9 +79,9 @@ export const programs: Program[] = [
     name: 'Partial Hospitalization (PHP)',
     level: 'Day treatment',
     short:
-      'Full days of structured clinical care while returning home or to sober living in the evening.',
+      'Full days of structured clinical care while returning home in the evening.',
     description:
-      'Our PHP delivers a high level of clinical care during the day—typically five to six hours, five days a week—while allowing clients to return home or to supportive housing at night. It is an ideal step down from residential care.',
+      'Our PHP delivers a high level of clinical care during the day—typically five to six hours, five days a week—while allowing clients to return home at night. It is an ideal step down from residential care.',
     features: [
       '5–6 hours of programming, 5 days a week',
       'Psychiatric and medical support',
